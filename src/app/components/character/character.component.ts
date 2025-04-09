@@ -8,7 +8,7 @@ import { CharacterService } from '../../services/character.service';
 
 @Component({
   selector: 'character',
-  imports: [FormsModule, NgForOf, NgIf, CharacterDetailComponent],
+  imports: [FormsModule, NgForOf, CharacterDetailComponent],
   templateUrl: './character.component.html',
   styleUrl: './character.component.scss',
   providers: [CharacterService]
