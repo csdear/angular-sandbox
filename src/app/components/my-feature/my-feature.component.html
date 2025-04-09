@@ -1,0 +1,14 @@
+<div>
+    <p>{{ title }}</p>
+    <input type="text" [(ngModel)]="myMessage" placeholder="Enter a message" />
+    <button (click)="logMessage()">Log MSG to console</button>
+    <br>
+</div>
+<div>
+    <label>ID: <input type="number" [(ngModel)]="id" /></label>
+  </div>
+  <div>
+    <label>Name: <input type="text" [(ngModel)]="name" /></label>
+  </div>
+  
+  <button (click)="logData(id, name)">Log Data</button>
