@@ -1,14 +1,29 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { Character } from '../character';
-import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { CharacterService } from '../../services/character.service';
 
 @Component({
-  selector: 'character-detail',
-  imports: [FormsModule, NgIf],
+  selector: 'app-character-detail',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './character-detail.component.html',
   styleUrl: './character-detail.component.scss'
 })
-export class CharacterDetailComponent {
-  @Input() character: Character = { id: 0, name: '' };
+export class CharacterDetailComponent implements OnInit {
+  character: Character | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private characterService: CharacterService
+  ) { }
+
+  ngOnInit(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.characterService.getCharacters()
+      .then(characters => {
+        this.character = characters.find(c => c.id === id);
+      });
+  }
 }

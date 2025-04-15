@@ -228,8 +228,12 @@
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <!-- MAIN ENTRY POINT-->
-      <app-my-feature></app-my-feature>
-      <character></character>
+<nav>
+  <button routerLink="/dashboard">Dashboard</button>
+  <button routerLink="/characters">Characters</button>
+</nav>
+
+<router-outlet></router-outlet>
     </div>
     
     <!-- <div class="right-side"></div> -->

@@ -5,19 +5,19 @@ import { Character } from '../character';
 import { CharacterService } from '../../services/character.service';
 
 @Component({
-  selector: 'app-character',
+  selector: 'app-dashboard',
   standalone: true,
   imports: [NgForOf, RouterModule],
-  templateUrl: './character.component.html',
-  styleUrl: './character.component.scss'
+  templateUrl: './dashboard.component.html',
+  styleUrl: './dashboard.component.scss'
 })
-export class CharacterComponent implements OnInit {
+export class DashboardComponent implements OnInit {
   characters: Character[] = [];
 
   constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
-    this.characterService.getCharacters()
+    this.characterService.getTopCharacters()
       .then(characters => this.characters = characters);
   }
 }

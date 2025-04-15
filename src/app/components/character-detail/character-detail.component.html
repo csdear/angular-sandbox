@@ -1,8 +1,5 @@
-<div *ngIf="character.id !== 0">
-    <h2>{{character.name}} details!</h2>
-    <div><label>id: </label>{{character.id}}</div>
-    <div>
-        <label>name: </label>
-        <input [(ngModel)]="character.name" placeholder="name" />
-    </div>
+<div *ngIf="character">
+  <h2>{{character.name}} Details</h2>
+  <div><label>ID: </label>{{character.id}}</div>
+  <div><label>Name: </label>{{character.name}}</div>
 </div>

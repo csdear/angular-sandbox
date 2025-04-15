@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { MyFeatureComponent } from "./components/my-feature/my-feature.component";
-import { CharacterComponent } from "./components/character/character.component";
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MyFeatureComponent, CharacterComponent],
+  standalone: true,
+  imports: [RouterOutlet, RouterModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
